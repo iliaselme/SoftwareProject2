@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-12-18T18:15:44 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="952c9f9e-7d9d-437f-811e-9e1cbbe61ecb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="ticket_id" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="vertrekStation" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="eindStation" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="typeTekst" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="klasseTekst" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="prijs" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="van" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="tot" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="op" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="datumHeen" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="type" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="klasseLabel" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="datumAankoop_year" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="datumAankoop_month" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="datumAankoop_day" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="datumAankoop_hour" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="datumAankoop_minute" class="java.lang.Integer" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="datumHeen_year" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="datumHeen_month" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="datumHeen_day" class="java.lang.Integer" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="realPath" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="91" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="238" splitType="Stretch">
+			<rectangle>
+				<reportElement x="76" y="-70" width="650" height="300" uuid="80f209b5-7a69-4d51-b688-691a67a4644d">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="76" y="170" width="650" height="10" forecolor="#941119" backcolor="#941119" uuid="cac035db-9a60-47f4-a1d0-653793eecef9">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="76" y="114" width="650" height="2" forecolor="#A1A1A1" backcolor="#A1A1A1" uuid="76af681c-8233-4bdf-8bb7-105161eaabcc">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<line>
+				<reportElement x="630" y="-70" width="1" height="300" uuid="b52ad95f-ad60-40a0-b48e-4f359ff490d5"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="660" y="190" width="30" height="30" uuid="a074335f-1078-40ef-8745-7dba9fbc264b"/>
+				<imageExpression><![CDATA[$P{realPath}+"/EHBRail.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement mode="Opaque" x="321" y="-60" width="161" height="157" uuid="4c6c7c4b-769e-4c79-b289-38cffcba273d"/>
+				<graphicElement fill="Solid"/>
+				<imageExpression><![CDATA[$P{realPath}+"/railway-station-xxl.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement mode="Transparent" x="100" y="-60" width="420" height="14" uuid="bf2834fa-8b3c-4c38-8740-1e0aa343c1e3"/>
+				<textElement textAlignment="Left">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ticket_id} + " | " + $P{vertrekStation}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="-46" width="382" height="16" uuid="d971d4a7-c537-453d-a162-25b1757689e9"/>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{typeTekst}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="-4" width="370" height="14" uuid="1804334e-6fda-4361-8b80-054458550668"/>
+				<box>
+					<pen lineColor="#000000"/>
+				</box>
+				<textElement markup="none">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{vertrekStation}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="-18" width="50" height="14" forecolor="#941119" uuid="f65b003e-4be2-43ea-a9c2-c51b74913116"/>
+				<textFieldExpression><![CDATA[$P{van}+": "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="10" width="50" height="14" forecolor="#941119" uuid="00f5dc1e-ea4f-4c1a-9bea-cb330e3ceca4"/>
+				<textFieldExpression><![CDATA[$P{tot}+": "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="38" width="50" height="14" forecolor="#941119" uuid="08dd521b-136b-47fa-b266-008fb04cda1a"/>
+				<textFieldExpression><![CDATA[$P{op}+": "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="150" y="24" width="370" height="14" uuid="0ecef4d9-7a86-4519-96be-e39865894502"/>
+				<box>
+					<pen lineColor="#000000"/>
+				</box>
+				<textElement markup="none">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{eindStation}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="150" y="50" width="170" height="14" uuid="aefda5e1-2f8c-40bd-ada1-d1ec622b1905">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datumHeen_day} + " | "+$P{datumHeen_month}+ " | "+$P{datumHeen_year}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="120" width="40" height="14" forecolor="#941119" uuid="5bde7b9f-5e40-4f99-b6c1-f265caa538be"/>
+				<textFieldExpression><![CDATA[$P{van}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="100" y="140" width="180" height="14" uuid="17f44c52-3036-44ad-a49c-f9a4c16346c9"/>
+				<box>
+					<pen lineColor="#000000"/>
+				</box>
+				<textElement markup="none">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{vertrekStation}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="291" y="120" width="1" height="44" uuid="ee8c231d-4ac1-410f-b6dc-0517519043a9"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="570" y="50" width="50" height="14" forecolor="#941119" uuid="459db95f-4412-46f7-9407-44079fc7c3ce"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{klasseLabel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="70" width="50" height="20" uuid="377342c0-e264-4a87-8119-7116225181cc"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{klasseTekst}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="520" y="-3" width="100" height="40" uuid="45fa8131-95e1-4b51-a8a2-2b9f438023f9"/>
+				<textElement textAlignment="Right">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="306" y="120" width="50" height="14" forecolor="#941119" uuid="4ec191da-6217-4511-b18a-0e2c7fd5f795"/>
+				<textFieldExpression><![CDATA[$P{tot}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Transparent" x="306" y="140" width="190" height="14" uuid="167ef863-9b64-4e20-9303-801ff46eba84"/>
+				<box>
+					<pen lineColor="#000000"/>
+				</box>
+				<textElement markup="none">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{eindStation}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="490" y="-68" width="130" height="30" uuid="0366bf66-5d3c-49e2-a26a-86f8e8fb08c2"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datumAankoop_day}+" | "+$P{datumAankoop_month}+" | "+$P{datumAankoop_year}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="490" y="-34" width="130" height="30" uuid="42fc3cad-2519-4566-94c1-e554f3168b4f"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datumAankoop_hour} + ":"+$P{datumAankoop_minute}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement mode="Transparent" x="631" y="-64" width="93" height="90" uuid="469b0391-82a2-43a9-8177-a27ca2e2becf"/>
+				<imageExpression><![CDATA[$P{realPath}+"/logoV4.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="640" y="38" width="80" height="72" uuid="a40d0985-e633-4ade-91c3-17cd34d60fef"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Join us on 
+16/12/2016
+@
+EHB]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="510" y="120" width="1" height="44" uuid="b079f1db-d645-42e2-9043-5f950363ccce"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="520" y="127" width="20" height="30" forecolor="#941119" uuid="920e4977-1759-4013-bfbe-f9951f3c21fa"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[€]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="540" y="127" width="80" height="30" uuid="9f9a6d40-d260-43c3-b1b9-551915c1a0e8"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prijs}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

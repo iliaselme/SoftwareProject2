@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ehbrail.WRouteInfoTabController">
+
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="916.0">
+         <children>
+            <Accordion layoutX="635.0" layoutY="184.0" prefHeight="206.0" prefWidth="269.0">
+               <panes>
+                <TitledPane animated="false" text="%RouteInfo.optioneel">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <RadioButton fx:id="vertrekRadio" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" text="%RouteInfo.vertrek">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="timeSel" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="aankomstRadio" layoutX="104.0" layoutY="9.0" mnemonicParsing="false" text="%RouteInfo.aankomst" toggleGroup="$timeSel" />
+                              <DatePicker fx:id="dateText" layoutX="14.0" layoutY="39.0" />
+                              <HBox layoutX="14.0" layoutY="78.0">
+                                 <children>
+                                    <Spinner fx:id="hourSpinner" prefWidth="60">
+                                       <valueFactory>
+                                          <SpinnerValueFactory.IntegerSpinnerValueFactory fx:id="hourValueFactory" max="23" min="0" wrapAround="true" />
+                                       </valueFactory>
+                                    </Spinner>
+                                    <Spinner fx:id="minuteSpinner" prefWidth="60">
+                                       <valueFactory>
+                                          <SpinnerValueFactory.IntegerSpinnerValueFactory fx:id="minuteValueFactory" max="59" min="0" wrapAround="true" />
+                                       </valueFactory>
+                                    </Spinner>
+                                 </children>
+                              </HBox>
+                              <Label fx:id="timeSpinnerlabel" layoutX="13.0" layoutY="127.0" prefHeight="17.0" prefWidth="183.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+               </panes>
+            </Accordion>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="32.0" prefWidth="222.0" text="Route">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="vanField" layoutX="79.0" layoutY="64.0" />
+            <TextField fx:id="naarField" layoutX="380.0" layoutY="64.0" />
+            <Text layoutX="48.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%RouteInfo.van" />
+            <Text layoutX="357.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%RouteInfo.naar" />
+            <Button fx:id="switchStationsButton" layoutX="265.0" layoutY="58.0" mnemonicParsing="false" onAction="#switchStations" prefHeight="17.0" prefWidth="13.0" text="⇄">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
+            <TreeView fx:id="treeRoute" layoutX="48.0" layoutY="184.0" prefHeight="534.0" prefWidth="566.0" />
+            <Button fx:id="planRouteButton" layoutX="560.0" layoutY="61.0" mnemonicParsing="false" onAction="#onClickplanRoute" prefHeight="32.0" prefWidth="109.0" text="%RouteInfo.plan" textAlignment="CENTER" />
+            <Label fx:id="errorLabel" layoutX="51.0" layoutY="140.0" prefHeight="25.0" prefWidth="779.0" textFill="RED" />
+            <Button fx:id="getFirstRouteButton" layoutX="71.0" layoutY="104.0" mnemonicParsing="false" onAction="#onClickGetFirstRoute" text="%RouteInfo.vroegste" />
+            <Button fx:id="getLastRouteButton" layoutX="159.0" layoutY="104.0" mnemonicParsing="false" onAction="#onClickGetLastRoute" text="%RouteInfo.laatste" />
+            <Button fx:id="getLaterRouteButton" layoutX="429.0" layoutY="104.0" mnemonicParsing="false" onAction="#onClickGetLaterRoute" text="%RouteInfo.later" />
+            <Button fx:id="getEarlierRouteButton" layoutX="334.0" layoutY="104.0" mnemonicParsing="false" onAction="#onClickGetEarlierRoute" text="%RouteInfo.vroeger" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

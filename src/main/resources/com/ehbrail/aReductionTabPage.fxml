@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ehbrail.AReductionTabController">
+
+   <children>
+
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="961.0">
+         <children>
+            <Button fx:id="changeReductionButton" layoutX="62.0" layoutY="562.0" mnemonicParsing="false" onAction="#changeReductionAction" prefHeight="34.0" prefWidth="147.0" text="%Korting.submit" />
+            <Text layoutX="62.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%Korting.veranderKorting" wrappingWidth="195.47003173828125">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <TableView fx:id="tableKorting" layoutX="62.0" layoutY="143.0" prefHeight="200.0" prefWidth="880.0">
+              <columns>
+                <TableColumn fx:id="kortingNaam" prefWidth="143.0" text="%Korting.naam" />
+                <TableColumn fx:id="kortingBeschrijving" prefWidth="536.0" text="%Korting.beschrijving" />
+                <TableColumn fx:id="kortingPercentage" minWidth="0.0" prefWidth="128.0" text="%Korting.percentage" />
+                <TableColumn fx:id="kortingActief" prefWidth="75.0" text="%Korting.actief" />
+              </columns>
+            </TableView>
+            <TextArea fx:id="newKortingBeschrijving" layoutX="226.0" layoutY="436.0" prefHeight="60.0" prefWidth="502.0" />
+            <TextField fx:id="newKortingNaam" layoutX="61.0" layoutY="436.0" />
+            <TextField fx:id="newKortingPercentage" layoutX="748.0" layoutY="436.0" prefHeight="25.0" prefWidth="119.0" />
+            <Text layoutX="61.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%Korting.nieuweKorting" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

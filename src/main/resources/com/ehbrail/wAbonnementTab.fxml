@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ehbrail.WAbonnementTabController">
+
+   <children>
+
+      <AnchorPane fx:id="klantid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0">
+         <children>
+            <Label layoutX="18.0" layoutY="17.0" prefHeight="32.0" prefWidth="222.0" text="%Abonnement.abonnement">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="vanField" layoutX="87.0" layoutY="117.0" prefHeight="25.0" prefWidth="222.0" />
+            <Text layoutX="385.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%RouteInfo.naar" />
+            <Button fx:id="switchStationsButton" layoutX="333.0" layoutY="116.0" mnemonicParsing="false" onAction="#switchStations" prefHeight="17.0" prefWidth="13.0" text="⇄">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <RadioButton fx:id="ritRadioButton" layoutX="46.0" layoutY="88.0" mnemonicParsing="false" onAction="#selecteerRit" text="%Abonnement.selecteer">
+               <toggleGroup>
+                  <ToggleGroup fx:id="soortAbonnement" />
+               </toggleGroup>
+            </RadioButton>
+            <Label layoutX="54.0" layoutY="120.0" text="%RouteInfo.van" />
+            <RadioButton fx:id="belgieRadioButton" layoutX="46.0" layoutY="152.0" mnemonicParsing="false" onAction="#HeelBelgie" text="%Abonnement.heel" toggleGroup="$soortAbonnement" />
+            <DatePicker fx:id="datepickerBegin" layoutX="122.0" layoutY="197.0" />
+            <TextField fx:id="naarField" layoutX="422.0" layoutY="116.0" prefHeight="25.0" prefWidth="222.0" />
+            <Label layoutX="45.0" layoutY="201.0" text="%Abonnement.begin" />
+            <DatePicker fx:id="datepickerEinde" layoutX="123.0" layoutY="233.0" />
+            <Label layoutX="47.0" layoutY="236.0" text="%Abonnement.einde" />
+            <Label layoutX="49.0" layoutY="284.0" text="%Abonnement.klasse" />
+            <RadioButton fx:id="tweedeRadioButton" layoutX="102.0" layoutY="284.0" mnemonicParsing="false" text="%Abonnement.tweede">
+               <toggleGroup>
+                  <ToggleGroup fx:id="klasse" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="eersteRadioButton" layoutX="194.0" layoutY="284.0" mnemonicParsing="false" text="%Abonnement.eerste" toggleGroup="$klasse" />
+            <ChoiceBox fx:id="kortingenid" layoutX="48.0" layoutY="331.0" prefWidth="150.0" />
+            <Label layoutX="51.0" layoutY="426.0" prefHeight="17.0" prefWidth="95.0" text="%Abonnement.prijsberekening" />
+            <Label fx:id="prijsid" layoutX="146.0" layoutY="428.0" prefHeight="17.0" prefWidth="150.0" />
+            <Button fx:id="koopbutton" layoutX="48.0" layoutY="498.0" mnemonicParsing="false" onAction="#koopAbonnement" prefHeight="25.0" prefWidth="233.0" text="%Abonnement.koop" />
+            <Button fx:id="berekenPrijsId" layoutX="49.0" layoutY="387.0" mnemonicParsing="false" onAction="#prijsBerekening" text="%Abonnement.berekenprijs" />
+            <Separator layoutX="674.0" layoutY="88.0" orientation="VERTICAL" prefHeight="583.0" prefWidth="11.0" />
+            <TableView fx:id="tableview" layoutX="715.0" layoutY="116.0" onMouseClicked="#selectInformaties" prefHeight="250.0" prefWidth="497.0">
+               <columns>
+                  <TableColumn fx:id="id" prefWidth="43.0" text="id" />
+                  <TableColumn fx:id="voornaamid" prefWidth="236.0" text="%Klant.voornaam" />
+                  <TableColumn fx:id="achternaamid" prefWidth="232.0" text="%Klant.naam" />
+               </columns>
+            </TableView>
+            <TextField fx:id="textButton" layoutX="715.0" layoutY="84.0" promptText="%filter" />
+            <Label layoutX="53.0" layoutY="462.0" text="%klantid" />
+            <Label fx:id="klantidOnclick" layoutX="129.0" layoutY="462.0" />
+            <Button fx:id="resetButton" layoutX="325.0" layoutY="498.0" mnemonicParsing="false" onAction="#reset" prefHeight="26.0" prefWidth="121.0" text="%reset" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

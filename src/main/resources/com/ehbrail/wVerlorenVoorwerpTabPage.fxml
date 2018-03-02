@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ehbrail.WVerlorenVoorwerpTabController">
+
+   <children>
+      <Pane prefHeight="614.0" prefWidth="831.0">
+         <children>
+            <TableView fx:id="tableview" layoutX="222.0" layoutY="121.0" onMouseClicked="#selectInformaties" prefHeight="400.0" prefWidth="596.0">
+               <columns>
+                  <TableColumn fx:id="voorwerpid" prefWidth="75.0" text="id" />
+                  <TableColumn fx:id="naam" prefWidth="85.33334350585938" text="%VerlorenVoorwerp.naamtabel" />
+                  <TableColumn fx:id="omschrijving" prefWidth="191.66668701171875" text="%VerlorenVoorwerp.omschrijvingtabel" />
+                  <TableColumn fx:id="datum" prefWidth="97.33331298828125" text="%VerlorenVoorwerp.datumtabel" />
+                  <TableColumn fx:id="station" prefWidth="145.0" text="station" />
+               </columns>
+            </TableView>
+            <TextField fx:id="textButton" layoutX="223.0" layoutY="74.0" promptText="%filter" />
+            <Button fx:id="loadButton" layoutX="19.0" layoutY="544.0" mnemonicParsing="false" onAction="#loadDatabase" prefHeight="29.0" prefWidth="92.0" text="%VerlorenVoorwerp.load" />
+            <Label layoutX="14.0" layoutY="38.0" prefHeight="33.0" prefWidth="226.0" text="%VerlorenVoorwerp.nieuweVoorwerp">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="naamtext" layoutX="17.0" layoutY="122.0" prefHeight="36.0" prefWidth="195.0" promptText="%VerlorenVoorwerp.naam">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="stationtext" layoutX="19.0" layoutY="164.0" prefHeight="36.0" prefWidth="195.0" promptText="%VerlorenVoorwerp.station">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="savebutton" layoutX="21.0" layoutY="475.0" mnemonicParsing="false" onAction="#insertVoorwerp" prefHeight="28.0" prefWidth="92.0" text="%VerlorenVoorwerp.insert" />
+            <TextArea fx:id="omschrijvingtext" layoutX="21.0" layoutY="238.0" prefHeight="190.0" prefWidth="192.0" promptText="%VerlorenVoorwerp.omschrijving">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextArea>
+            <Button fx:id="deletebutton" layoutX="318.0" layoutY="529.0" mnemonicParsing="false" onAction="#deleteVoorwerp" prefHeight="28.0" prefWidth="83.0" text="%VerlorenVoorwerp.delete" />
+            <DatePicker fx:id="datumtext" layoutX="21.0" layoutY="206.0" prefHeight="29.0" prefWidth="192.0" promptText="%VerlorenVoorwerp.datum" />
+            <Button fx:id="updatebutton" layoutX="123.0" layoutY="475.0" mnemonicParsing="false" onAction="#updateVoorwerp" prefHeight="28.0" prefWidth="92.0" text="%VerlorenVoorwerp.update" />
+            <TextField fx:id="idtext" layoutX="223.0" layoutY="530.0" prefHeight="25.0" prefWidth="83.0" promptText="id">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="treintext" layoutX="20.0" layoutY="431.0" prefHeight="36.0" prefWidth="195.0" promptText="%VerlorenVoorwerp.treinid">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Text layoutX="21.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%VerlorenVoorwerp.verplicht" wrappingWidth="195.0000078678131" />
+            <Button fx:id="reset" layoutX="122.0" layoutY="544.0" mnemonicParsing="false" onAction="#resetAll" prefHeight="28.0" prefWidth="92.0" text="Reset" />
+         </children>
+      </Pane>
+   </children>
+</HBox>

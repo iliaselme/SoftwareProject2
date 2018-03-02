@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ehbrail.WTicketTabController">
+
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="583.0" prefWidth="836.0">
+         <children>
+            <Label layoutX="13.0" layoutY="14.0" prefHeight="47.0" prefWidth="154.0" text="Ticket: Route">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="vanField" layoutX="90.0" layoutY="116.0" />
+            <TextField fx:id="naarField" layoutX="395.0" layoutY="116.0" />
+            <Text layoutX="51.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%RouteInfo.van" />
+            <Text layoutX="350.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%RouteInfo.naar" />
+            <Button fx:id="switchStationsButton" layoutX="272.0" layoutY="110.0" mnemonicParsing="false" onAction="#switchStations" prefHeight="17.0" prefWidth="13.0" text="⇄">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="resetTicketButton" layoutX="56.0" layoutY="466.0" mnemonicParsing="false" onAction="#onClickResetTicket" prefHeight="32.0" prefWidth="88.0" text="reset" />
+            <Button fx:id="koopTicketButton" layoutX="419.0" layoutY="466.0" mnemonicParsing="false" onAction="#onClickKoopTicket" prefHeight="32.0" prefWidth="98.0" text="%koopTicket" textAlignment="CENTER" />
+            <RadioButton fx:id="heenEnTerugRadio" layoutX="195.0" layoutY="181.0" mnemonicParsing="false" onAction="#showPaneHeenTerug" text="%heenterug">
+               <toggleGroup>
+                  <ToggleGroup fx:id="heenTerug" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="heenRadio" layoutX="51.0" layoutY="181.0" mnemonicParsing="false" onAction="#showPaneTerug" selected="true" text="%heenreis" toggleGroup="$heenTerug" />
+            <Label fx:id="heenLabel" layoutX="46.0" layoutY="275.0" text="%heen" />
+            <DatePicker fx:id="datumHeenDatePicker" layoutX="135.0" layoutY="271.0" />
+            <RadioButton fx:id="heenVertrekRadio" layoutX="346.0" layoutY="275.0" mnemonicParsing="false" selected="true" text="%RouteInfo.vertrek">
+               <toggleGroup>
+                  <ToggleGroup fx:id="heenVertrekAankomst" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="heenAankomstRadio" layoutX="475.0" layoutY="275.0" mnemonicParsing="false" text="%RouteInfo.aankomst" toggleGroup="$heenVertrekAankomst" />
+            <Pane fx:id="painTerug" layoutX="45.0" layoutY="314.0" prefHeight="66.0" prefWidth="701.0" visible="false">
+               <children>
+                  <Label fx:id="terugLabel" layoutX="-1.0" layoutY="13.0" text="%terug" />
+                  <DatePicker fx:id="datumTerugDatePicker" layoutX="89.0" layoutY="9.0" />
+                  <RadioButton fx:id="terugVertrekRadio" layoutX="299.0" layoutY="13.0" mnemonicParsing="false" selected="true" text="%RouteInfo.vertrek">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="terugVertrekAankomst" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="terugAankomstRadio" layoutX="429.0" layoutY="13.0" mnemonicParsing="false" text="%RouteInfo.aankomst" toggleGroup="$terugVertrekAankomst" />
+               </children>
+            </Pane>
+            <RadioButton fx:id="eersteKlasseRadio" layoutX="195.0" layoutY="219.0" mnemonicParsing="false" text="%Abonnement.eerste">
+               <toggleGroup>
+                  <ToggleGroup fx:id="klasse" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="tweedeKlasseRadio" layoutX="52.0" layoutY="219.0" mnemonicParsing="false" selected="true" text="%Abonnement.tweede" toggleGroup="$klasse" />
+            <ComboBox fx:id="kortingCombo" layoutX="135.0" layoutY="367.0" prefWidth="150.0" promptText="%RouteInfo.selecteerKorting" />
+            <Text layoutX="41.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%RouteInfo.korting" />
+         </children>
+      </Pane>
+
+   </children>
+</HBox>

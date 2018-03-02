@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ehbrail.AEmployeeTabController">
+   <children>
+        <Pane>
+            <children>
+                <Label fx:id="errorRequestLabel" layoutX="33.0" prefHeight="25.0" prefWidth="291.0" textFill="RED">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="filterBox" layoutX="93.0" layoutY="33.0" />
+                <Text layoutX="33.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%filter" wrappingWidth="51.13671875">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+
+                <TableView fx:id="tableView" layoutX="30.0" layoutY="80.0" prefHeight="547.0" prefWidth="637.0">
+
+                    <columns>
+                        <TableColumn fx:id="medewerkerId" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="naam" prefWidth="75.0" text="%Klant.voornaam" />
+                        <TableColumn fx:id="voornaam" prefWidth="126.0" text="%Klant.naam" />
+                        <TableColumn fx:id="username" prefWidth="124.0" text="%username" />
+                        <TableColumn fx:id="bevoegdheid" prefWidth="118.0" text="%authorization" />
+                        <TableColumn fx:id="actief" prefWidth="117.0" text="%active" />
+                    </columns>
+                </TableView>
+            <Label layoutX="711.0" layoutY="130.0" text="%newEmployee">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="addNameBox" layoutX="815.0" layoutY="174.0" prefHeight="31.0" prefWidth="172.0" />
+            <Text layoutX="711.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%Klant.voornaam" wrappingWidth="63.999996185302734" />
+            <Text layoutX="711.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%Klant.naam" wrappingWidth="64.07715582847595" />
+            <TextField fx:id="addSurnameBox" layoutX="815.0" layoutY="213.0" prefHeight="31.0" prefWidth="172.0" />
+            <ChoiceBox fx:id="addAuthCBox" layoutX="815.0" layoutY="253.0" prefHeight="31.0" prefWidth="193.0" />
+            <Text layoutX="711.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%authorization" wrappingWidth="94.07715582847595" />
+            <Button layoutX="803.0" layoutY="299.0" mnemonicParsing="false" onAction="#addWerknemer" prefHeight="31.0" prefWidth="101.0" text="%VerlorenVoorwerp.insert" />
+            <Button fx:id="deleteButton" layoutX="241.0" layoutY="655.0" mnemonicParsing="false" onAction="#deleteWerknemer" prefHeight="31.0" prefWidth="88.0" text="%VerlorenVoorwerp.delete" />
+            <Label fx:id="removeIdBox" layoutX="186.0" layoutY="657.0" prefHeight="31.0" prefWidth="64.0" text="ID" />
+            <Label layoutX="30.0" layoutY="660.0" text="%removeEmployee">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="333.0" layoutY="660.0" text="%resetEmployee">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="resetButton" layoutX="523.0" layoutY="655.0" mnemonicParsing="false" onAction="#resetWerknemer" prefHeight="31.0" prefWidth="75.0" text="Reset" />
+            <Label fx:id="resetIdBox" layoutX="462.0" layoutY="656.0" prefHeight="31.0" prefWidth="64.0" text="ID" />
+            <CheckBox fx:id="inactiveCheckBox" layoutX="402.0" layoutY="38.0" mnemonicParsing="false" selected="true" text="%showInactive" />
+            <Label layoutX="711.0" layoutY="409.0" text="%editEmployee">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="editNameBox" layoutX="815.0" layoutY="478.0" prefHeight="31.0" prefWidth="172.0" />
+            <Text layoutX="711.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%Klant.voornaam" wrappingWidth="64.07715582847595" />
+            <Text layoutX="711.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%Klant.naam" wrappingWidth="64.07715582847595" />
+            <TextField fx:id="editSurnameBox" layoutX="815.0" layoutY="517.0" prefHeight="31.0" prefWidth="172.0" />
+            <ChoiceBox fx:id="editAuthCBox" layoutX="815.0" layoutY="557.0" prefHeight="31.0" prefWidth="193.0" />
+            <Text layoutX="711.0" layoutY="578.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%authorization" wrappingWidth="94.07715582847595" />
+            <Button layoutX="803.0" layoutY="603.0" mnemonicParsing="false" onAction="#editWerknemer" prefHeight="31.0" prefWidth="101.0" text="%VerlorenVoorwerp.update" />
+            <Text layoutX="711.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="51.13671875" />
+            <Label fx:id="editIdLabel" layoutX="816.0" layoutY="446.0" />
+            <CheckBox fx:id="actiefCheckBox" layoutX="935.0" layoutY="449.0" mnemonicParsing="false" text="%active" />
+            </children>
+        </Pane>
+   </children>
+</HBox>
